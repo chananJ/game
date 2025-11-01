@@ -5,10 +5,10 @@
   
   let Num = Math.trunc(Math.random() * 20) + 1;
   let score = 20;
+  let high_score = 0; 
 
-  document.querySelector('.check').addEventListener('click', function () {
+    document.querySelector('.check').addEventListener('click', function () {
     let guess = Number(document.querySelector('.guess').value);
-    
     if (!guess) {
       document.querySelector('.message').textContent = 'לא הכנסת מספר';
     } else if (guess === Num) {
@@ -17,6 +17,11 @@
       document.querySelector('.number').style.width = '30rem';
       document.querySelector('.win-image').classList.remove('hidden');
       document.querySelector('.number').textContent = Num;
+      if (score >high_score){
+        high_score=score;
+        document.querySelector('.highscore').textContent=high_score;
+      }
+
     } else if (guess > Num) {
       if (score > 0) {
         document.querySelector('.message').textContent = `${guess} is greater than ${Num}`;
