@@ -40,11 +40,13 @@
 
   againBtn.addEventListener('click', function() {
 document.querySelector('.message').textContent = 'יאללה שוב';
-score = 20
-let Num = Math.trunc(Math.random() * 20) + 1;
-document.querySelector('.score').textContent = score
-document.querySelector('.number').textContent = "?"
-document.querySelector('.guess').value = ''
+score = 20;
+Num = Math.trunc(Math.random() * 20) + 1;
+document.querySelector('.score').textContent = score;
+document.querySelector('.number').textContent = "?";
+document.querySelector('.guess').value = '';
 document.querySelector('.win-image').classList.add('hidden');
-  });
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
+});
 
